@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'money-rails', '~> 1.6'
 gem 'pg', '~> 0.15'
 gem 'rails', '4.2.5.1'
 gem 'rest-client'
