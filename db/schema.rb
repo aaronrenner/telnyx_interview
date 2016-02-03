@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203162742) do
+ActiveRecord::Schema.define(version: 20160203163308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "past_price_records", force: :cascade do |t|
+    t.integer  "product_id",                     null: false
+    t.integer  "price_cents",    default: 0,     null: false
+    t.string   "price_currency", default: "USD", null: false
+    t.string   "product_name"
+    t.float    "percent_change",                 null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "past_price_records", ["product_id"], name: "index_past_price_records_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "external_product_id"
@@ -24,4 +36,6 @@ ActiveRecord::Schema.define(version: 20160203162742) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
+
+  add_foreign_key "past_price_records", "products"
 end
