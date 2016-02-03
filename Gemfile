@@ -5,9 +5,11 @@ gem 'rails', '4.2.5.1'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
   gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
