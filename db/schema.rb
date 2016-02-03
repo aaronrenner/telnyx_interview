@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160203163308) do
   add_index "past_price_records", ["product_id"], name: "index_past_price_records_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.string   "external_product_id"
+    t.integer  "external_product_id",                 null: false
     t.integer  "price_cents",         default: 0,     null: false
     t.string   "price_currency",      default: "USD", null: false
     t.string   "product_name"

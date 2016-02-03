@@ -6,7 +6,9 @@ gem 'rails', '4.2.5.1'
 gem 'rest-client'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'pry'
   gem 'rspec-rails', '~> 3.0'
 end
 

@@ -7,13 +7,16 @@ class OmegaPricing
   end
 
   def get_pricing_records(start_date, end_date)
-    RestClient.get("#{base_url}/pricing/records.json",
+    result = RestClient.get("#{base_url}/pricing/records.json",
       params: {
         api_key: api_key,
         start_date: format_date(start_date),
         end_date: format_date(end_date)
       }
     )
+
+    # TODO refactor for error handling
+    JSON.parse(result.to_str, symbolize_names: true).fetch(:productRecords)
   end
 
   private

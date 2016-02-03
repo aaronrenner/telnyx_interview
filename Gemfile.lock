@@ -39,14 +39,23 @@ GEM
     addressable (2.4.0)
     arel (6.0.3)
     builder (3.2.2)
-    byebug (8.2.2)
+    coderay (1.1.0)
     concurrent-ruby (1.0.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     domain_name (0.5.20160128)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.1.0)
+    dotenv-rails (2.1.0)
+      dotenv (= 2.1.0)
+      railties (>= 4.0, < 5.1)
     erubis (2.7.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.6.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashdiff (0.2.3)
@@ -58,6 +67,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -75,6 +85,10 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -126,6 +140,7 @@ GEM
     rspec-support (3.4.1)
     safe_yaml (1.0.4)
     sixarm_ruby_unaccent (1.1.1)
+    slop (3.6.0)
     spring (1.6.2)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -152,9 +167,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
+  dotenv-rails
+  factory_girl_rails
   money-rails (~> 1.6)
   pg (~> 0.15)
+  pry
   rails (= 4.2.5.1)
   rest-client
   rspec-rails (~> 3.0)
